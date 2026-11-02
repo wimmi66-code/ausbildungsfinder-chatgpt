@@ -1,16 +1,16 @@
-# Ausbildungsfinder für ChatGPT – Einrichtung ohne Programmierkenntnisse
+# Ausbildungsfinder für ChatGPT und Microsoft Copilot – Einrichtung ohne Programmierkenntnisse
 
 Stand: 02.11.2026
 
 ## Was du erhältst
 
-Eine eigenständige Website. Sie erstellt Suchaufträge für ChatGPT. Die Recherche findet in ChatGPT statt, nachdem du den Auftrag eingefügt und abgesendet hast. Auf der Website selbst erscheinen keine Live-Stellenangebote. Der Originalquellcode und die Originalgrafiken wurden nicht übernommen.
+Eine eigenständige, an der Funktion der angegebenen Claude-Anwendung orientierte Website. Sie erstellt Suchaufträge für ChatGPT und Microsoft Copilot. Die Recherche findet im gewählten KI-Chat statt, nachdem du den Auftrag eingefügt und abgesendet hast. Auf der Website selbst erscheinen keine Live-Stellenangebote. Der Originalquellcode und die Originalgrafiken wurden nicht übernommen.
 
-Die Suche beginnt mit „Was suchst du?“: Ausbildung, Praktikum, berufliche Erprobung, Schulpraktikum oder EQ. Der Ort wird immer manuell als Ort oder Postleitzahl in Deutschland eingegeben. Es gibt keine feste regionale Vorauswahl. Erst nach einer Ortseingabe lassen sich Suchauftrag und Textdownload nutzen. Schulabschluss, Zeitraum, Mobilität und maximale Fahrtzeit grenzen die Suche ein. Die Erreichbarkeit bestimmt die passenden Nachbarorte. Mehrdeutige Ortsangaben muss ChatGPT vor der Recherche klären.
+Die Suche beginnt mit „Was suchst du?“: Ausbildung, Praktikum, berufliche Erprobung, Schulpraktikum oder EQ. Der Ort wird immer manuell als Ort oder Postleitzahl in Deutschland eingegeben. Es gibt keine feste regionale Vorauswahl. Erst nach einer Ortseingabe lassen sich Suchauftrag und Textdownload nutzen. Schulabschluss, Zeitraum, Mobilität und maximale Fahrtzeit grenzen die Suche ein. Die Erreichbarkeit bestimmt die passenden Nachbarorte. Mehrdeutige Ortsangaben muss das gewählte KI-System vor der Recherche klären.
 
 Du kannst einen konkreten Beruf, mehrere Berufe oder ein Berufsfeld eingeben, etwa „IT und Medien“. Fehlt ein Beruf, verlangt der Auftrag eine kurze Rückfrage zu Interessen. Die Prüfung vorhandener Listen ist unter „Vorhandene Liste prüfen“ erreichbar. Sie bleibt eine Zusatzfunktion; der Ort wird dadurch nicht verändert. Vorhandene Betriebe außerhalb des Suchgebiets werden erhalten und auf Abweichungen geprüft.
 
-Die Seite erstellt außerdem Telefon- und E-Mail-Vorlagen. Praxis-Score, Dublettenprüfung, Quellen und Excel-Ausgabe werden im Auftrag angefordert; ihre tatsächliche Erstellung erfolgt erst in ChatGPT und hängt von den dort verfügbaren Funktionen ab.
+Die Seite erstellt außerdem Telefon- und E-Mail-Vorlagen. Praxis-Score, Dublettenprüfung, Quellen und Excel-Ausgabe werden im Auftrag angefordert; ihre tatsächliche Erstellung erfolgt erst im gewählten KI-Chat und hängt von den dort verfügbaren Funktionen ab.
 
 ## 1. Dateien entpacken
 
@@ -22,9 +22,9 @@ Lade die ZIP-Datei herunter. Unter Windows: Rechtsklick → „Alle extrahieren�
 
 Klicke „Auftrag kopieren“. Falls der Browser das Kopieren lokaler Dateien verhindert, wird der Text markiert: Drücke Strg + C. Alternativ „Als Text speichern“ verwenden. Auf dem Mac entsprechen die Tastenkombinationen Cmd + C und Cmd + V.
 
-Klicke „ChatGPT öffnen“, melde dich mit deinem Konto an und füge den Auftrag in einen neuen Chat ein. Sende ihn ab. Nutze ein Modell bzw. einen Chat mit verfügbarer Websuche. Falls ChatGPT nicht recherchieren kann, soll es das laut Auftrag offen mitteilen. Für die Listenprüfung lädst du die betreffende Excel-Datei direkt im Chat hoch.
+Klicke auf „ChatGPT öffnen“ oder „Microsoft Copilot öffnen“. Melde dich an, soweit dein Zugang das erfordert, und füge denselben Suchauftrag in einen neuen Chat ein. Sende ihn ab. Nutze einen Chat mit verfügbarer Websuche. Für dienstliche Anfragen öffne den von deiner Einrichtung freigegebenen Zugang; bei Microsoft 365 Copilot kann das dein gewohnter Microsoft-365-Zugang sein. Falls keine Websuche verfügbar oder sie von der Organisation deaktiviert ist, muss das KI-System das laut Auftrag offen mitteilen. Für die Listenprüfung lädst du die betreffende Excel-Datei im Chat hoch, sofern verfügbar. Ohne Dateiupload kannst du einen anonymisierten Tabellenausschnitt einfügen; damit ist keine vollständige Arbeitsmappenprüfung möglich. Wenn das Eingabefeld den langen Auftrag nicht annimmt, kannst du ihn über „Als Text speichern“ herunterladen und als TXT-Datei anhängen, sofern unterstützt. Den Auftrag nicht unbemerkt kürzen.
 
-Diese Variante benötigt keinen API-Schlüssel. Die Website selbst verursacht keine API-Aufrufe; für ChatGPT gelten die Grenzen und Bedingungen deines Kontos. Die Eingaben werden nicht dauerhaft im Browser gespeichert. Erst durch dein Einfügen und Absenden erhält ChatGPT den Suchauftrag.
+Diese Variante benötigt keinen API-Schlüssel. Die Website selbst verursacht keine API-Aufrufe; für das jeweilige KI-System gelten die Grenzen und Bedingungen deines Kontos. Die Eingaben werden nicht dauerhaft im Browser gespeichert. Erst durch dein Einfügen und Absenden erhält der gewählte KI-Dienst den Suchauftrag.
 
 ## 3. GitHub öffnen
 
@@ -42,7 +42,7 @@ Im leeren Repository klicke auf „uploading an existing file“. Bei einem bere
 
 Ziehe index.html und app.js in das Upload-Feld. Du kannst README.md und ANLEITUNG.html ergänzen. Lade die entpackten Dateien hoch, nicht nur die ZIP-Datei und nicht den übergeordneten Ordner. index.html und app.js sollen direkt auf der obersten Ebene stehen.
 
-Trage bei der Commit-Nachricht beispielsweise „Ausbildungsfinder für ChatGPT hinzufügen“ ein. Klicke „Commit changes“. Danach müssen beide Dateien in der Dateiliste sichtbar sein. Der Standardbranch heißt meistens main; merke dir den tatsächlich angezeigten Namen.
+Trage bei der Commit-Nachricht beispielsweise „Ausbildungsfinder hinzufügen“ ein. Klicke „Commit changes“. Danach müssen beide Dateien in der Dateiliste sichtbar sein. Der Standardbranch heißt meistens main; merke dir den tatsächlich angezeigten Namen.
 
 ## 6. Über den Zugriff entscheiden
 
@@ -71,7 +71,7 @@ Ersetze DEIN-GITHUB-NAME durch deinen tatsächlichen GitHub-Namen. Das Beispiel 
 
 ## 9. Die veröffentlichte Seite testen
 
-Öffne die von GitHub angezeigte Adresse. Wähle beispielsweise „Ausbildung“, „Kaufmann/-frau für Büromanagement“, den Ort „Hamm“, einen passenden Beginn und „ÖPNV“. Prüfe, ob der rechte Text deine Angaben enthält. Kopiere ihn nach ChatGPT und starte die Recherche.
+Öffne die von GitHub angezeigte Adresse. Wähle beispielsweise „Ausbildung“, „Kaufmann/-frau für Büromanagement“, den Ort „Hamm“, einen passenden Beginn und „ÖPNV“. Prüfe, ob der rechte Text deine Angaben enthält. Kopiere ihn wahlweise nach ChatGPT oder Microsoft Copilot und starte die Recherche.
 
 Probiere anschließend „Praktikum“ mit einem anderen Ort aus, etwa Münster. Der Auftrag muss diesen neuen Ort enthalten und darf keine feste Region voraussetzen. Aktiviere zusätzlich „Eine Betriebs- oder Excel-Liste aktualisieren“. Der Auftrag muss nun ausdrücklich auf die im Chat hochzuladende Datei hinweisen. Wenn du die Suchart wechselst, muss dein eingegebener Ort erhalten bleiben. Wenn du den Ort leerst oder nur Leerzeichen eingibst, müssen Kopieren und Textdownload gesperrt sein. Probiere die Seite auch auf einem Smartphone aus.
 
@@ -89,17 +89,17 @@ Die Seite erscheint, aber der Auftrag bleibt leer: app.js fehlt, liegt in einem 
 
 Kopieren funktioniert nicht: Klicke in den Auftrag, markiere ihn mit Strg + A und kopiere mit Strg + C. Die Funktion „Als Text speichern“ bietet einen zweiten Weg.
 
-ChatGPT liefert keine Quellen: Frage ausdrücklich nach Webrecherche und aufgerufenen Originalquellen. Kann die Sitzung keine Websuche nutzen, sind damit keine aktuellen Stellen bestätigt. Die Website kann ChatGPT-Funktionen nicht freischalten.
+Das KI-System liefert keine Quellen: Frage ausdrücklich nach Webrecherche und aufgerufenen Originalquellen. Kann die Sitzung keine Websuche nutzen, sind damit keine aktuellen Stellen bestätigt. Die Website kann Websuche oder Kontofunktionen nicht freischalten.
 
 Es gibt weniger als zehn belegte Treffer: Das ist als Rechercheergebnis zulässig. Prüfe Suchgebiet, Zeitraum und Beruf. Es dürfen keine Betriebe erfunden werden, um die Zielzahl zu erreichen.
 
-Keine Excel-Datei: Dateierstellung muss in ChatGPT verfügbar sein. Der Auftrag verlangt andernfalls eine CSV als Ersatz. Die Website exportiert nur den Suchauftrag als Text, nicht die Rechercheergebnisse.
+Keine Excel-Datei: Dateierstellung muss im gewählten KI-Chat verfügbar sein. Der Auftrag verlangt andernfalls eine CSV als Ersatz. Die Website exportiert nur den Suchauftrag als Text, nicht die Rechercheergebnisse.
 
 ## Wenn Ergebnisse direkt auf der Website erscheinen sollen
 
 Dafür wäre eine zusätzliche Ausbaustufe nötig: Browser → geschützter Server mit Zugangskontrolle und Nutzungslimits → OpenAI Responses API mit Websuche → Quellenanzeige auf der Website. Ein API-Schlüssel darf niemals in index.html, app.js oder einem öffentlich ausgelieferten Build stehen. GitHub Secrets machen einen in Browsercode eingebauten Schlüssel nicht geheim.
 
-GitHub Pages allein führt keine solche serverseitige API-Anbindung aus. Dafür brauchst du zusätzlich einen Server oder eine geeignete Serverless-Funktion. Dieser Download enthält bewusst die Arbeitsweise der verlinkten Vorlage mit manueller Übergabe an ChatGPT.
+GitHub Pages allein führt keine solche serverseitige API-Anbindung aus. Dafür brauchst du zusätzlich einen Server oder eine geeignete Serverless-Funktion. Dieser Download enthält bewusst die Arbeitsweise der verlinkten Vorlage mit manueller Übergabe an ChatGPT oder Microsoft Copilot.
 
 ## Quellen und Orientierung
 
@@ -117,7 +117,7 @@ https://developers.openai.com/api/docs/guides/tools-web-search
 
 ## Prüfstand dieser Lieferung
 
-JavaScript-Syntax und die Erzeugung der Suchaufträge wurden automatisiert geprüft, einschließlich aller fünf Sucharten, freier Ortsangabe, Ortspflicht, Erhalt des Ortes beim Wechsel der Suchart und Listenprüfung. Die HTML-Verweise wurden auf vorhandene Dateien geprüft. Ein grafischer Browsertest sowie eine Live-Recherche in deinem ChatGPT-Konto oder eine Bereitstellung in deinem GitHub-Konto wurden nicht durchgeführt.
+JavaScript-Syntax und die Erzeugung der Suchaufträge wurden automatisiert geprüft, einschließlich aller fünf Sucharten, freier Ortsangabe, Ortspflicht, Erhalt des Ortes beim Wechsel der Suchart und Listenprüfung. Die HTML-Verweise wurden auf vorhandene Dateien geprüft. Ein grafischer Browsertest sowie eine Live-Recherche in deinem ChatGPT- oder Copilot-Konto oder eine Bereitstellung in deinem GitHub-Konto wurden nicht durchgeführt.
 
 
 ## Quellenprüfung und Schutz vor erfundenen Angaben
@@ -130,7 +130,7 @@ Die Ausgabe unterscheidet A (konkrete Anzeige), B (allgemeine Praktikumsmöglich
 
 Das Quellenprotokoll muss tatsächliche Seitenprüfungen von geplanten, erfolglosen und unterlassenen Prüfungen unterscheiden. Veröffentlichungsdatum und Abrufdatum bleiben getrennt. Unbekannte Kontakte und Fahrtzeiten werden nicht ergänzt. Widersprüchliche Datumsangaben dürfen nicht stillschweigend korrigiert werden. Ein Score ersetzt keinen Beleg.
 
-Diese Regeln verringern Fehler, garantieren aber keine fehlerfreien KI-Ergebnisse. Die Anwendung erzeugt weiterhin einen Prompt; sie erzwingt oder kontrolliert die anschließenden Werkzeugaufrufe in ChatGPT technisch nicht. Quellen und Verfügbarkeit müssen vor einer Vermittlung nachgeprüft werden. Ein deterministisch geführtes Quellenprotokoll mit technischer Kontrolle wäre ein weiterer Entwicklungsschritt mit eigener Rechercheanbindung.
+Diese Regeln verringern Fehler, garantieren aber keine fehlerfreien KI-Ergebnisse. Die Anwendung erzeugt weiterhin einen Prompt; sie erzwingt oder kontrolliert die anschließenden Werkzeugaufrufe im gewählten KI-System technisch nicht. Quellen und Verfügbarkeit müssen vor einer Vermittlung nachgeprüft werden. Ein deterministisch geführtes Quellenprotokoll mit technischer Kontrolle wäre ein weiterer Entwicklungsschritt mit eigener Rechercheanbindung.
 
 
 ## Ergänzung: Region Stadt Hamm (Westfalen)
@@ -155,3 +155,25 @@ Die ältere index.html besitzt noch kein Feld schoolSources. Die bisherige app.j
 Zur Reparatur genügt jetzt der Austausch der app.js aus diesem Paket. Lade sie im vorhandenen GitHub-Repository direkt neben index.html hoch und speichere mit Commit changes. Warte die erfolgreiche Bereitstellung ab und lade die Website mit Strg + F5 neu. Teste Praktikum, Büro und 59071: Rechts muss der Suchauftrag diese Angaben enthalten. Für das zusätzliche Schulvorgabenfeld musst du auch die mitgelieferte index.html ersetzen.
 
 Die Fehlerbehebung wurde mit fehlendem und vorhandenem schoolSources-Feld geprüft, einschließlich Eingabeänderung und Kopieren.
+
+
+## Nutzung mit ChatGPT und Microsoft Copilot
+
+Oberfläche und Suchauftrag sind für beide KI-Systeme formuliert. Es gibt zwei gleichwertige Öffnen-Buttons. Kopieren und Textdownload bleiben unabhängig von der Wahl des Dienstes. Der neue Textdownload heißt Suchauftrag-Ausbildungsfinder.txt. Die geprüften Quellen für Hamm und den EN-Kreis sowie Belegstatus und Quellenprotokoll gelten unverändert für beide.
+
+Dateiupload, Websuche und Dateierstellung richten sich nach dem tatsächlich verwendeten Produkt, Konto und den Einstellungen der Organisation. Der Prompt verlangt bei fehlenden Funktionen eine offene Angabe und, soweit sinnvoll, eine CSV-Ausgabe als Text. Er verspricht keine identischen Suchergebnisse in beiden Diensten und keinen automatischen Datentransfer.
+
+Microsoft beschreibt den Dateiupload unter https://support.microsoft.com/de-de/microsoft-365-copilot/file-upload-in-microsoft-copilot . Die Websuche in Microsoft-Copilot-Umgebungen kann durch Organisationsrichtlinien gesteuert werden: https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access . Geprüft am 02.11.2026.
+
+Aktualisierung: index.html UND app.js zusammen im bestehenden GitHub-Repository ersetzen, Commit changes ausführen und die erfolgreiche Bereitstellung abwarten. Danach die Website mit Strg + F5 neu laden. Diese Erweiterung benötigt keinen neuen API-Schlüssel. Der vorhandene Repository-Name und die bisherige Website-Adresse müssen nicht geändert werden.
+
+
+## Kolping-Layout
+
+Das Erscheinungsbild wurde an die Websites Kolping Ruhr (https://www.kolping-ruhr.de/Angebote-und-Produkte/) und Kolping Westfalen/Hamm (https://www.kolping-hamm.de/) angelehnt: Arial, weiße Kopfzeile, Kolping-Orange, graue Flächen, Großbuchstaben in den Abschnittsüberschriften und eckige Bedienelemente. Die Original-Logos stammen von den beiden Websites und liegen im Ordner assets. Für die Nutzung des Downloads ist kein Abruf externer Schriften oder Logo-Dateien erforderlich. Die Suchlogik in app.js ist bei dieser Layoutänderung unverändert geblieben.
+
+Wichtig für GitHub: index.html ersetzen und den gesamten Ordner assets mit kolping-ruhr.png und kolping-westfalen.png neben index.html hochladen. Die zuletzt bereitgestellte app.js kann bestehen bleiben; im ZIP liegt dieselbe aktuelle Version bei. Nach Commit changes und erfolgreicher Bereitstellung mit Strg + F5 neu laden. Auch lokal muss assets neben index.html liegen.
+
+Assetquellen, eingesehen am 02.11.2026:
+https://www.kolping-ruhr.de/images/logo2020.png?v3
+https://www.kolping-hamm.de/images/logo2020.png?v3

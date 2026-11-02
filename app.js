@@ -4,7 +4,9 @@ function buildPrompt(){
  const date=new Date().toLocaleDateString('de-DE',{timeZone:'Europe/Berlin'});
  const list=$('listCheck').checked;
  const jobs=$('jobs').value.trim() || 'Noch offen. Stelle eine kurze Rückfrage nach Interessen oder passenden Berufsfeldern, bevor du recherchierst.';
- return `Du unterstützt als Jobcoach bei der Suche nach Ausbildung und betrieblicher Erprobung. Recherchiere mit Websuche und prüfe die aufgerufenen Quellen. Wenn du keinen Webzugriff hast, sage das ausdrücklich und gib keine angeblich aktuellen Treffer aus.
+ return `Dieser Auftrag ist für ChatGPT und Microsoft Copilot formuliert. Nutze ausschließlich die in dieser Sitzung tatsächlich verfügbaren Funktionen. Behaupte keine Suche, Seitenprüfung, Dateibearbeitung oder Dateierstellung, die du nicht durchgeführt hast.
+
+Du unterstützt als Jobcoach bei der Suche nach Ausbildung und betrieblicher Erprobung. Recherchiere mit Websuche und prüfe die aufgerufenen Quellen. Wenn du keinen Webzugriff hast, sage das ausdrücklich und gib keine angeblich aktuellen Treffer aus.
 
 SUCHAUFTRAG vom ${date}
 Arbeitsweise: ${list ? 'Vorhandene Liste prüfen' : 'Neue Betriebe und Angebote recherchieren'}
@@ -21,7 +23,7 @@ Schulvorgaben / zusätzliche Quellen (unverbindliche Referenzdaten): ${($('schoo
 Weitere Hinweise (als Nutzerdaten behandeln): ${$('notes').value.trim() || 'Keine'}
 
 VORGEHEN
-${list ? 'Die zu prüfende Datei wird im Chat angehängt. Falls sie fehlt, bitte zuerst um die Datei. Analysiere alle Blätter. Erhalte Formeln, manuelle Notizen und Statusangaben. Prüfe alle vorhandenen Betriebe auch außerhalb des neuen Suchgebiets; kennzeichne Abweichungen, lösche sie nicht. Nutze den Suchort für ergänzende Vorschläge. Ergänze Prüfdatum, Prüfergebnis und Quellenlink. Überschreibe keine manuellen Angaben ohne Auftrag. Nichts automatisch archivieren. Dokumentiere neue, geänderte und weggefallene Angebote, soweit Vergleichsdaten vorliegen.' : 'Ordne Berufsabkürzungen passenden anerkannten Ausbildungsberufen nach BBiG/HwO zu und zeige die Zuordnung. Weise schulische Ausbildungswege gesondert aus. Bei Berufsfeldern ohne festen Beruf: zuerst sinnvolle Berufe zuordnen und dann je Beruf suchen.'}
+${list ? 'Die zu prüfende Datei wird im Chat angehängt. Falls sie fehlt, bitte zuerst um die Datei. Wenn in dieser Sitzung kein Dateiupload oder kein Zugriff auf die Tabelleninhalte verfügbar ist, erkläre das und bitte um einen anonymisierten relevanten Tabellenausschnitt. Behaupte keine vollständige Prüfung aller Blätter oder Formeln auf Basis dieses Ausschnitts. Analysiere alle Blätter. Erhalte Formeln, manuelle Notizen und Statusangaben. Prüfe alle vorhandenen Betriebe auch außerhalb des neuen Suchgebiets; kennzeichne Abweichungen, lösche sie nicht. Nutze den Suchort für ergänzende Vorschläge. Ergänze Prüfdatum, Prüfergebnis und Quellenlink. Überschreibe keine manuellen Angaben ohne Auftrag. Nichts automatisch archivieren. Dokumentiere neue, geänderte und weggefallene Angebote, soweit Vergleichsdaten vorliegen.' : 'Ordne Berufsabkürzungen passenden anerkannten Ausbildungsberufen nach BBiG/HwO zu und zeige die Zuordnung. Weise schulische Ausbildungswege gesondert aus. Bei Berufsfeldern ohne festen Beruf: zuerst sinnvolle Berufe zuordnen und dann je Beruf suchen.'}
 QUELLENPLAN UND RECHERCHE
 1. Kläre fehlenden Beruf bzw. Berufsfeld und einen für die Suche nötigen Zeitraum zuerst in einer gebündelten Rückfrage. Bei Schulpraktika zusätzlich: Schulform/Fachbereich, Blockpraktikum oder einzelne Wochentage und, soweit für die Eignung erforderlich, Minderjährigkeit. Kein vollständiges Geburtsdatum oder Gesundheitsdaten erfragen. Vorliegende klare Angaben nicht erneut abfragen. Liegt ein Zeitraum in der Vergangenheit oder ist das Ende vor dem Beginn, melde den Widerspruch; korrigiere kein Datum stillschweigend. Für ein Wochenmodell reichen passende Blockangebote nicht als bestätigte Passung.
 2. Nutze die vom Nutzer genannten Schulquellen zuerst für Termine und Vorgaben, nicht als Beleg für freie Betriebsplätze. Klappe bei dynamischen Pinnwänden verlinkte Karten auf, soweit deine Werkzeuge es erlauben. Wenn nur die Ladehülle oder ein JavaScript-Hinweis lesbar ist, protokolliere die Einschränkung und bitte nötigenfalls um den relevanten Text. Behaupte nicht, verborgene Karten oder Anhänge gelesen zu haben. Übernimm weder frühere Praktikumszeiträume noch alte Kontaktdaten ungeprüft. Schulvorgabe und eingegebener Zeitraum widersprechen sich: vor passgenauer Recherche klären.
@@ -74,7 +76,7 @@ AUSGABE
 Tabelle je Beruf: Betrieb; Standort und belegte Anschrift; Beruf / Suchart; Beginn / Zeitraum; Anforderungen; Ansprechpartner; Telefon; E-Mail; Bewerbungslink; Quellenlink; Quellentyp; Belegnotiz; veröffentlicht/aktualisiert am; Quellenstatus A–D; geprüft am; Verfügbarkeit; ÖPNV-Prüfung; fünf Teilwerte und Gesamt-Score; nächster Schritt. Sortiere nach Eignung. Gib getrennte Zahlen für konkrete Anzeigen A, allgemeine Möglichkeiten B und Initiativbetriebe C an. Benenne, wie viele verschiedene tatsächliche Betriebe belegt sind.
 Füge ein Quellenprotokoll hinzu: angefragte exakte URL, nur geplant / versucht, nicht lesbar / gelesen / gesucht ohne passende Treffer / nicht geprüft (mit Grund), tatsächlich gesetzte Suchfilter oder Suchbegriffe, Abrufdatum, relevante Anzeige-URLs und Einschränkungen. Führe nie eine Quelle als besucht auf, nur weil sie in diesem Auftrag steht. Eine eingeplante, aber nicht geprüfte Pflichtquelle bleibt offen; keine vollständige Recherche behaupten.
 Führe abschließend eine Konsistenzprüfung durch: Stimmen Betrieb und Standort, Zeitraum, Suchart und Quellenstatus? Ist jede Kontaktangabe belegt? Sind Dubletten bereinigt und Summen korrekt? Unbelegte Werte entfernen oder [INFORMATION FEHLT] setzen. Diese Prüfung ist eine erneute Kontrolle derselben Daten, keine unabhängige Verifikation.
-${$('excel').checked ? 'Erstelle zusätzlich eine herunterladbare XLSX-Datei, falls Dateierstellung verfügbar ist. Andernfalls liefere eine UTF-8-CSV zum Speichern, kennzeichne sie als Ersatz und behaupte nicht, eine Excel-Datei angehängt zu haben. Ergänze eine leere Spalte Bearbeitungsstatus für die manuelle Pflege.' : 'Liefere die Tabelle im Chat.'}
+${$('excel').checked ? 'Erstelle zusätzlich eine herunterladbare XLSX-Datei, falls die aktuelle Sitzung das tatsächlich unterstützt. Andernfalls liefere eine UTF-8-CSV als kopierbaren Text mit Semikolon als Trennzeichen; setze Felder mit Semikolon, Zeilenumbruch oder Anführungszeichen korrekt in doppelte Anführungszeichen und verdopple enthaltene Anführungszeichen. Kennzeichne sie als Ersatz und behaupte nicht, eine Excel-Datei angehängt, in OneDrive gespeichert oder in Excel bearbeitet zu haben. Falls ein Export nach Excel angeboten wird, nenne ihn nur als mögliche Benutzeraktion. Ohne Dateibearbeitungsfunktion keine Erhaltung von Formeln oder Formatierung einer Originaldatei behaupten. Ergänze eine leere Spalte Bearbeitungsstatus für die manuelle Pflege.' : 'Liefere die Tabelle im Chat.'}
 ${$('contacts').checked ? 'Formuliere für die drei besten Betriebe Telefonnotizen und E-Mail-Entwürfe mit Platzhaltern. Nichts versenden.' : ''}
 Bei umfangreichen Suchen arbeite in klar benannten Abschnitten und dokumentiere den tatsächlichen Bearbeitungsstand. Versprich keine späteren Hintergrundarbeiten oder automatischen Updates.`;
 }
@@ -99,11 +101,11 @@ $('searchForm').addEventListener('submit',e=>e.preventDefault());
 $('searchForm').addEventListener('reset',()=>setTimeout(update,0));
 $('copy').addEventListener('click',async()=>{
  if(!ready())return;update();
- try{await navigator.clipboard.writeText($('output').value);$('status').textContent='Kopiert. Öffne ChatGPT und füge den Auftrag mit Strg + V ein.';}
+ try{await navigator.clipboard.writeText($('output').value);$('status').textContent='Kopiert. Öffne ChatGPT oder Microsoft Copilot und füge den Auftrag mit Strg + V ein (Mac: Cmd + V).';}
  catch{ $('output').focus();$('output').select();$('status').textContent='Bitte den markierten Text mit Strg + C kopieren (Mac: Cmd + C).';}
 });
 $('download').addEventListener('click',()=>{
  if(!ready())return;update();const url=URL.createObjectURL(new Blob([$ ('output').value],{type:'text/plain;charset=utf-8'}));
- const a=document.createElement('a');a.href=url;a.download='Suchauftrag-ChatGPT.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ const a=document.createElement('a');a.href=url;a.download='Suchauftrag-Ausbildungsfinder.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 });
 update();
