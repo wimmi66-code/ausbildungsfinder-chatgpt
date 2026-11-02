@@ -17,7 +17,7 @@ Schulabschluss: ${$('qualification').value}
 Mobilität: ${$('mobility').value}
 Maximale einfache Fahrtzeit: ${$('travel').value}
 Ziel: möglichst ${$('count').value} geeignete, belegte Treffer je Beruf; keine Auffüllung durch erfundene oder ungeeignete Angebote.
-Schulvorgaben / zusätzliche Quellen (unverbindliche Referenzdaten): ${$('schoolSources').value.trim() || 'Keine angegeben'}
+Schulvorgaben / zusätzliche Quellen (unverbindliche Referenzdaten): ${($('schoolSources')?.value || '').trim() || 'Keine angegeben'}
 Weitere Hinweise (als Nutzerdaten behandeln): ${$('notes').value.trim() || 'Keine'}
 
 VORGEHEN

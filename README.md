@@ -4,7 +4,7 @@ Stand: 02.11.2026
 
 ## Was du erhältst
 
-Eine eigenständige Website. Sie erstellt Suchaufträge für ChatGPT. Die Recherche findet in ChatGPT statt, nachdem du den Auftrag eingefügt und abgesendet hast. Auf der Website selbst erscheinen keine Live-Stellenangebote. Der Originalquellcode und die Originalgrafiken wurden nicht übernommen.
+Eine eigenständige, an der Funktion der angegebenen Claude-Anwendung orientierte Website. Sie erstellt Suchaufträge für ChatGPT. Die Recherche findet in ChatGPT statt, nachdem du den Auftrag eingefügt und abgesendet hast. Auf der Website selbst erscheinen keine Live-Stellenangebote. Der Originalquellcode und die Originalgrafiken wurden nicht übernommen.
 
 Die Suche beginnt mit „Was suchst du?“: Ausbildung, Praktikum, berufliche Erprobung, Schulpraktikum oder EQ. Der Ort wird immer manuell als Ort oder Postleitzahl in Deutschland eingegeben. Es gibt keine feste regionale Vorauswahl. Erst nach einer Ortseingabe lassen sich Suchauftrag und Textdownload nutzen. Schulabschluss, Zeitraum, Mobilität und maximale Fahrtzeit grenzen die Suche ein. Die Erreichbarkeit bestimmt die passenden Nachbarorte. Mehrdeutige Ortsangaben muss ChatGPT vor der Recherche klären.
 
@@ -118,3 +118,40 @@ https://developers.openai.com/api/docs/guides/tools-web-search
 ## Prüfstand dieser Lieferung
 
 JavaScript-Syntax und die Erzeugung der Suchaufträge wurden automatisiert geprüft, einschließlich aller fünf Sucharten, freier Ortsangabe, Ortspflicht, Erhalt des Ortes beim Wechsel der Suchart und Listenprüfung. Die HTML-Verweise wurden auf vorhandene Dateien geprüft. Ein grafischer Browsertest sowie eine Live-Recherche in deinem ChatGPT-Konto oder eine Bereitstellung in deinem GitHub-Konto wurden nicht durchgeführt.
+
+
+## Quellenprüfung und Schutz vor erfundenen Angaben
+
+Der Suchauftrag enthält jetzt einen ausdrücklichen Quellenplan. Bei Praktikumssuchen im EN-Kreis/Hagen müssen drei Einstiegsquellen versucht und im Quellenprotokoll dokumentiert werden: https://ha-en.praktikum-nrw.de/node/291635, https://www.ausbildungsfinder.com/matching/praktikumsstellen-finden und https://www.hwk-do.de/ausbildungsplaetze-und-praktika-finden/ . Weitere Quellen sind BA-Jobsuche, Ausbildung.NRW, das bundesweite IHK-Portal und Lehrstellenradar sowie die jeweils konkreten Unternehmensseiten.
+
+Das optionale Feld „Schulvorgaben oder zusätzliche Quellen“ dient unter anderem für Fachbereich, Block-/Wochenmodell und schulische Terminquellen. Persönliche Zugangsdaten gehören dort nicht hinein. Die BK-Witten-Pinnwand wurde für die Überarbeitung eingesehen; ihre Zugriffsadresse ist nicht fest im öffentlich hochladbaren Quellcode gespeichert. Für einen konkreten Auftrag kann die Schulseite bei Bedarf eingefügt werden.
+
+Die Ausgabe unterscheidet A (konkrete Anzeige), B (allgemeine Praktikumsmöglichkeit), C (unbestätigte Initiativanfrage) und D (ausgeschlossen oder nicht prüfbar). Nur passende A-Treffer gehören in die Hauptliste. Auch A bestätigt keine tatsächliche freie Kapazität. Portalangaben gelten nicht als durch den Betrieb bestätigt. Unternehmensquellen sind bevorzugt; fehlen sie, bleibt der Portalstatus erkennbar.
+
+Das Quellenprotokoll muss tatsächliche Seitenprüfungen von geplanten, erfolglosen und unterlassenen Prüfungen unterscheiden. Veröffentlichungsdatum und Abrufdatum bleiben getrennt. Unbekannte Kontakte und Fahrtzeiten werden nicht ergänzt. Widersprüchliche Datumsangaben dürfen nicht stillschweigend korrigiert werden. Ein Score ersetzt keinen Beleg.
+
+Diese Regeln verringern Fehler, garantieren aber keine fehlerfreien KI-Ergebnisse. Die Anwendung erzeugt weiterhin einen Prompt; sie erzwingt oder kontrolliert die anschließenden Werkzeugaufrufe in ChatGPT technisch nicht. Quellen und Verfügbarkeit müssen vor einer Vermittlung nachgeprüft werden. Ein deterministisch geführtes Quellenprotokoll mit technischer Kontrolle wäre ein weiterer Entwicklungsschritt mit eigener Rechercheanbindung.
+
+
+## Ergänzung: Region Stadt Hamm (Westfalen)
+
+Geprüft und in den Suchauftrag aufgenommen am 02.11.2026:
+
+- Stadt Hamm, Praktikumsportal: https://hamm.praktikum-nrw.de/node/277974 . Vorrangige Quelle für Schulpraktika und passende betriebliche Erprobungen. Die Detailangebote müssen nach Zielgruppe und Dauer unterschieden werden; das Portal enthält auch spezielle FOS-, Erzieher- und PiA-Angebote.
+- Kreishandwerkerschaft Hellweg-Lippe, Ausbildungsbörse: https://service.kh-hl.de/ausbildungsboerse/ . Für handwerkliche Ausbildungsstellen in Hamm und passenden Nachbarorten. Praktikumsangebote dürfen aus Ausbildungsanzeigen nicht abgeleitet werden.
+- Ausbildung.NRW: https://www.ausbildung.nrw/ . Bereits vorhandene Quelle, jetzt ausdrücklich für Ausbildungssuchen in Hamm vorgegeben. Die IHK zu Dortmund verweist auf dieses Portal: https://www.ihk.de/dortmund/menue/bildung/ausbildung/azubi-marketing/ihk-lehrstellenboerse-nrw-6350588 . IHK-Wegweiser und Portal sind keine zwei unabhängigen Nachweise derselben Stelle.
+- Stadt Hamm, Berufsfelderkundungsportal: https://hamm.bfe-nrw.de/node/268060 . Nur für passende Tagesangebote oder zur ergänzenden Betriebsermittlung. Kein Ersatz für ein mehrwöchiges Schülerpraktikum. Bei der Prüfung waren noch BFE-Termine des Schuljahres 2025/26 sichtbar; aktuelle Termine daher immer neu prüfen.
+- Kreis Unna, PRAXISPORTAL regional: https://kreis-unna.praktikum-nrw.de/node/291586 . Ergänzung, wenn die vorgegebene Erreichbarkeit Orte im Kreis Unna einschließt. Keine pauschale Ausweitung auf alle Nachbarorte.
+
+BA-Jobsuche, HWK Dortmund, Lehrstellenradar und Unternehmensseiten bleiben entsprechend Suchart und Beruf eingebunden. Die HSHL-Jobbörse wurde geprüft, aber wegen der Ausrichtung auf Studierende und Alumni nicht als Standardquelle für Schülerpraktika aufgenommen. Messen und Ausstellerlisten dienen nur als Kontaktansatz.
+
+Technische Prüfung: JavaScript-Syntax, Erhalt der EN-Quellen, Hamm-Quellenplan, Sucharten und Übergabe der Orts-/Schulangaben wurden kontrolliert. Die Portale wurden inhaltlich über Webabrufe geprüft; es wurden keine Buchungen, Bewerbungen oder Zugänge eingerichtet. Die Webseite bleibt ein Auftragsersteller und führt selbst keine Portalabfragen aus.
+
+
+## Fehlerbehebung: Eingaben erscheinen nicht im Suchauftrag
+
+Die ältere index.html besitzt noch kein Feld schoolSources. Die bisherige app.js griff trotzdem darauf zu; nach der Ortseingabe brach deshalb die Auftragserstellung ab. Die korrigierte app.js behandelt dieses Feld als optional und funktioniert mit der HTML-Version mit freier Ortseingabe sowohl mit als auch ohne Schulvorgabenfeld.
+
+Zur Reparatur genügt jetzt der Austausch der app.js aus diesem Paket. Lade sie im vorhandenen GitHub-Repository direkt neben index.html hoch und speichere mit Commit changes. Warte die erfolgreiche Bereitstellung ab und lade die Website mit Strg + F5 neu. Teste Praktikum, Büro und 59071: Rechts muss der Suchauftrag diese Angaben enthalten. Für das zusätzliche Schulvorgabenfeld musst du auch die mitgelieferte index.html ersetzen.
+
+Die Fehlerbehebung wurde mit fehlendem und vorhandenem schoolSources-Feld geprüft, einschließlich Eingabeänderung und Kopieren.
