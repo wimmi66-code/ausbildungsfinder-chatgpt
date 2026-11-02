@@ -4,7 +4,7 @@ Stand: 02.11.2026
 
 ## Was du erhältst
 
-Eine eigenständige, an der Funktion der angegebenen Claude-Anwendung orientierte Website. Sie erstellt Suchaufträge für ChatGPT und Microsoft Copilot. Die Recherche findet im gewählten KI-Chat statt, nachdem du den Auftrag eingefügt und abgesendet hast. Auf der Website selbst erscheinen keine Live-Stellenangebote. Der Originalquellcode und die Originalgrafiken wurden nicht übernommen.
+Eine eigenständige Website. Sie erstellt Suchaufträge für ChatGPT und Microsoft Copilot. Die Recherche findet im gewählten KI-Chat statt, nachdem du den Auftrag eingefügt und abgesendet hast. Auf der Website selbst erscheinen keine Live-Stellenangebote. Der Originalquellcode und die Originalgrafiken wurden nicht übernommen.
 
 Die Suche beginnt mit „Was suchst du?“: Ausbildung, Praktikum, berufliche Erprobung, Schulpraktikum oder EQ. Der Ort wird immer manuell als Ort oder Postleitzahl in Deutschland eingegeben. Es gibt keine feste regionale Vorauswahl. Erst nach einer Ortseingabe lassen sich Suchauftrag und Textdownload nutzen. Schulabschluss, Zeitraum, Mobilität und maximale Fahrtzeit grenzen die Suche ein. Die Erreichbarkeit bestimmt die passenden Nachbarorte. Mehrdeutige Ortsangaben muss das gewählte KI-System vor der Recherche klären.
 
